@@ -23,7 +23,7 @@ app.use(function(req,res,next){
         console.log("token provided");
         jwt.verify(token, secret , function(err,decoded){
             if(err){
-                 res.json({success:false, message: "Token is invalid"});
+                 next();
 
             }else{
                 console.log("token decode");

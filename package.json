@@ -8,9 +8,9 @@
     "body-parser": "^1.17.1",
     "cors": "^2.8.3",
     "express": "^4.15.2",
-    "jsonwebtoken": "^7.3.0",
-    "mongodb": "^2.2.25",
-    "mongoose": "^4.9.4"
+    "jsonwebtoken": "^7.4.0",
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.9.6"
   },
   "devDependencies": {},
   "scripts": {

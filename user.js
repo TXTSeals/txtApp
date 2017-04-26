@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt-nodejs');  //module used to encrypt password data
+// var bcrypt = require('bcrypt-nodejs');  
+//module used to encrypt password data
 
 
 var UserSchema = new Schema({

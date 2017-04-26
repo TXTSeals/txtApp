@@ -8,8 +8,8 @@ var UserSchema = new Schema({
 	name:{type: String, required: true},
 	email:{ type:String, required:true},
 	school:{ type: String, required:true},
-	email:{ type:String, required:true},
-	school:{ type: String, required:true}
+	personalPhone:{type:Number, required:true},
+	parentPhone:{type:Number, required:true}
 
 })
 

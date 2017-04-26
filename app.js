@@ -25,8 +25,6 @@ var app = angular.module('starter', ['ionic','ui.router','service'])
   });
 });
 
-var app = angular.module('myApp', ['ui.router','service']);
-
 app.config(function($stateProvider,$urlRouterProvider,$httpProvider){
     $httpProvider.interceptors.push('AuthInter');
 

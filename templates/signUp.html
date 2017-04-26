@@ -7,7 +7,7 @@
       </ion-content>
       <div ng-submit="register()" name="loginForm">
       <div class="list">
-  <label class="item item-input">
+  <label class="item item-input" style="margin-top: 40px;">
     <span class="input-label">Full Name</span>
     <input type="text" ng-model="newUser.name" name="name" required>
   </label>
@@ -21,11 +21,11 @@
   </label>
   <label class="item item-input">
     <span class="input-label">Personal Cell Phone</span>
-    <input type="text" ng-model="newUser.personalPhone" name="personalPhone" required>
+    <input type="number" ng-model="newUser.personalPhone" name="personalPhone" required>
   </label>
   <label class="item item-input">
     <span class="input-label">Parents Cell Phone</span>
-    <input type="text" ng-model="newUser.parentPhone" name="parentPhone" required>
+    <input type="number" ng-model="newUser.parentPhone" name="parentPhone" required>
   </label>
 </div>
 <center>

@@ -52,9 +52,11 @@ mongoose.connect('mongodb://localhost:27017/loginExample', function(err){
 
 app.post('/signUp', jsonParser,function(req,res){
     var user= new User();
-    user.username = req.body.username;
-    user.password = req.body.password;
+    user.name = req.body.name;
     user.email = req.body.email;
+    user.school = req.body.school;
+    user.personalPhone = req.body.personalPhone;
+    user.parentPhone = req.body.parentPhone;
 
 
     user.save(function(err){

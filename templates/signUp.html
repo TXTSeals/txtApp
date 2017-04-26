@@ -1,0 +1,38 @@
+   <ion-pane>
+      <ion-header-bar class="bar-stable">
+      <a href="index.html" class="button icon-left ion-chevron-left button-clear button-dark"></a>
+        <h1 class="title">Sign Up</h1>
+      </ion-header-bar>
+      <ion-content class="has-header">
+      </ion-content>
+      <div ng-submit="register()" name="loginForm">
+      <div class="list">
+  <label class="item item-input">
+    <span class="input-label">Full Name</span>
+    <input type="text" ng-model="newUser.name" name="name" required>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Email</span>
+    <input type="email" ng-model="newUser.email" name="email" required>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">School</span>
+    <input type="text" ng-model="newUser.school" name="school" required>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Personal Cell Phone</span>
+    <input type="text" ng-model="newUser.personalPhone" name="personalPhone" required>
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Parents Cell Phone</span>
+    <input type="text" ng-model="newUser.parentPhone" name="parentPhone" required>
+  </label>
+</div>
+<center>
+<button class="button button-positive" type="Submit">
+  Submit
+</button>
+</center>
+    {{newUser}}
+</div>
+    </ion-pane>

@@ -8,8 +8,8 @@ var UserSchema = new Schema({
 	name:{type: String, required: true},
 	email:{ type:String, required:true},
 	school:{ type: String, required:true},
-	email:{ type:String, required:true},
-	school:{ type: String, required:true}
+	personalPhone:{ type:String, required:false},
+	parentPhone:{ type: String, required:true}
 
 })
 
@@ -22,5 +22,5 @@ UserSchema.pre('save', function(next){
 		return bcrypt.compareSync(password,this.password);
 	}
 
+	});
 	module.exports = mongoose.model('User', UserSchema);
-});

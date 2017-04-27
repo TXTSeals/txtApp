@@ -16,31 +16,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(function(req,res,next){
-    console.log("checking");
-    var token = req.body.token || req.body.query || req.headers['x-access-token'];
-    if(token){
-        console.log("token provided");
-        jwt.verify(token, secret , function(err,decoded){
-            if(err){
-                 res.json({success:false, message: "Token is invalid"});
 
-            }else{
-                console.log("token decode");
-                req.decoded = decoded;
-                next();
-            }
-        })
-
-    }else{
-        console.log("no token provided");
-        next();
-    }
-});
-
+ 
 
 //connect to the mongo db using moongose module
-mongoose.connect('mongodb://localhost:27017/loginExample', function(err){
+mongoose.connect('mongodb://localhost:27017/cubeData', function(err){
     if(err){
       console.log("error " + err);
     }else{
@@ -57,40 +37,20 @@ app.post('/signUp', jsonParser,function(req,res){
     user.school = req.body.school;
     user.personalPhone = req.body.personalPhone;
     user.parentPhone = req.body.parentPhone;
-
+ 
 
     user.save(function(err){
         if(err){
             console.log(err);
-            res.json({success:false,message:"Error! User could not be created"});
+            res.json({success:false,message:"Please make sure you fill out all of your information correctly!"});
         }else{
             console.log(user);
-            res.json({success:true,message:"User saved successfully ... Redirecting"})
+            res.json({success:true,message:"Cool! You successfully signed up!"})
 
         }
 
     });
 });
-
-// app.post('/login', jsonParser, function(req,res){
-//     User.findOne({ name: req.body.name}).select('name email school personalPhone parentPhone').exec(function(err,user){
-//         if(err){
-//             throw err; 
-//         }
-
-//         if(!user){
-//             res.json({success:false, message: 'User does not exist'});
-//         }else if(user){
-//             var validPassword = user.comparePassword(req.body.password);
-//             if(!validPassword){
-//                 res.json({success:false, message: 'Password invalid'});
-//             }else{
-//                 var token = jwt.sign({username: user.username, email: user.email}, secret,{expiresIn: '5h'});
-//                 res.json({success:true, message: 'User logged In ....Redirecting', token: token});
-//             }
-//         }
-//     })
-// })
 
 
 

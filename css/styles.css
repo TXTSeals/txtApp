@@ -25,7 +25,7 @@ body{
 #buttonContainer{
   text-align: center;
   display: block;
-  margin: auto;
+  margin: auto; 
 }
 .button.button-positive.button-outline{
   width: 75%;

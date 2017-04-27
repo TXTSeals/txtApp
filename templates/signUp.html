@@ -21,18 +21,21 @@
   </label>
   <label class="item item-input">
     <span class="input-label">Personal Cell Phone</span>
-    <input type="number" ng-model="newUser.personalPhone" name="personalPhone" required>
+    <input type="text" ng-model="newUser.personalPhone" phone-input name="personalPhone" >
   </label>
   <label class="item item-input">
     <span class="input-label">Parents Cell Phone</span>
-    <input type="number" ng-model="newUser.parentPhone" name="parentPhone" required>
+    <input type="text" ng-model="newUser.parentPhone" phone-input name="parentPhone" required>
   </label>
 </div>
 <center>
-<button class="button button-positive" type="Submit">
+<button class="button button-positive" type="Submit"  ng-click="register()">
   Submit
 </button>
 </center>
     {{newUser}}
+</div>
+<div class="reponse" ng-show="serverMsg">
+    <h3>{{serverMsg.message}}</h3>
 </div>
     </ion-pane>

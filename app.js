@@ -72,29 +72,12 @@ app.config(function($stateProvider,$urlRouterProvider,$httpProvider){
         views: {
             'main':{
                 templateUrl: 'templates/login.html',
-                resolve:{
-                    checkLoggedIn: function($http,$state,$window){
-                        if($window.localStorage.getItem('token')){
-                            $state.go('checkIn');
-                        }
-                    }
-                },
                 controller: function($scope,$http,$timeout,$state,$window){
-                    $scope.login = function(){
-                        $scope.serverMsg =false;
+                    $scope.serverMsg =false;
 
-                        $http.post('/login', $scope.newUser).then(function(data){
-                            $scope.serverMsg = data.data;
-
-                            if($scope.serverMsg.success == true){
-
-                                $window.localStorage.setItem('token', $scope.serverMsg.token) //saves token under the name token in the browser
-                                $timeout(function(){
-                                    $state.go('checkIn');
-                                }, 2000);
-                            }
-                        });
-                    }
+                    $http.get('http://localhost:8080/users').then(function({ data: users }) {
+                        $scope.users = users;
+                    })
                 }
             }
         }
@@ -104,16 +87,9 @@ app.config(function($stateProvider,$urlRouterProvider,$httpProvider){
         views: {
             'main':{
                 templateUrl: 'templates/checkIn.html',
-                resolve: {
-                    checkToken: function($window,$http,$state){
-                        if($window.localStorage.getItem('token')){
-                             return $http.post('/me');
-                        }else{
-                            $state.go('login')
-                        }
-
-                    }
-                },
+                // resolve: {
+                    
+                // },
                 controller: function($scope,$http,checkToken,$state,$window,$timeout){
 
                         $scope.user = checkToken.data;
@@ -219,3 +195,23 @@ app.filter('tel', function () {
 
     };
 });
+
+ // controller: function($scope,$http,$timeout,$state,$window){
+ //                    $scope.login = function(){
+ //                        $scope.serverMsg =false;
+
+ //                        $http.get('mongodb://localhost:27017/cubeData', $scope.user.name).then(function(data){
+ //                            $scope.serverMsg = data.data;
+
+ //                            if($scope.serverMsg.success == true){
+
+ //                                $timeout(function(){
+ //                                    $state.go('checkIn');
+ //                                }, 2000);
+ //                            }
+ //                        });
+ //                    }
+ //                }
+ //            }
+ //        }
+ //    })

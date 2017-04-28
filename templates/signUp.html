@@ -1,40 +1,40 @@
    <ion-pane>
-      <ion-header-bar class="bar-stable">
-      <a href="index.html" class="button icon-left ion-chevron-left "></a>
-        <h1 class="title">Sign Up</h1>
-      </ion-header-bar>
-      <ion-content class="has-header">
-      </ion-content>
-      <div ng-submit="register()" name="loginForm">
+    <div class="bar bar-header bar-positive">
+      <a href="index.html" class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+      <h1 class="title">Sign Up</h1>
+    </div>
+    <ion-content class="has-header">
+    </ion-content>
+    <div ng-submit="register()" name="loginForm">
       <div class="list">
-  <label class="item item-input" style="margin-top: 40px;">
-    <span class="input-label">Full Name</span>
-    <input type="text" ng-model="newUser.name" name="name" required>
-  </label>
-  <label class="item item-input">
-    <span class="input-label">Email</span>
-    <input type="email" ng-model="newUser.email" name="email" required>
-  </label>
-  <label class="item item-input">
-    <span class="input-label">School</span>
-    <input type="text" ng-model="newUser.school" name="school" required>
-  </label>
-  <label class="item item-input">
-    <span class="input-label">Personal Cell Phone</span>
-    <input type="text" ng-model="newUser.personalPhone" phone-input name="personalPhone" >
-  </label>
-  <label class="item item-input">
-    <span class="input-label">Parents Cell Phone</span>
-    <input type="text" ng-model="newUser.parentPhone" phone-input name="parentPhone" required>
-  </label>
-</div>
-<center>
-<button class="button button-positive" type="Submit"  ng-click="register()">
-  Submit
-</button>
-</center>
-</div>
-<div class="reponse" ng-show="serverMsg">
-    <h3>{{serverMsg.message}}</h3>
-</div>
-    </ion-pane>
+        <label class="item item-input" style="margin-top: 40px;">
+          <span class="input-label">Full Name</span>
+          <input type="text" ng-model="newUser.name" name="name" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" ng-model="newUser.email" name="email" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">School</span>
+          <input type="text" ng-model="newUser.school" name="school" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Personal Cell Phone</span>
+          <input type="text" ng-model="newUser.personalPhone" phone-input name="personalPhone" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Parents Cell Phone</span>
+          <input type="text" ng-model="newUser.parentPhone" phone-input name="parentPhone" required>
+        </label>
+      </div>
+      <center>
+        <button class="button button-positive" type="Submit"  ng-click="register()">
+          Submit
+        </button>
+      </center>
+    </div>
+    <div class="reponse" ng-show="serverMsg">
+      <h3>{{serverMsg.message}}</h3>
+    </div>
+  </ion-pane>

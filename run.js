@@ -52,12 +52,14 @@ app.post('/signUp', jsonParser,function(req,res){
     });
 });
 
-
-
+app.get('/users', function(req,response){
+    User.find({}, { name: true }, function(err, users) {
+        response.json(users)
+    })
+})
 
 // decipher our token in the client side
 app.post('/me',function(req,res){
-
     res.send(req.decoded);
 })
 

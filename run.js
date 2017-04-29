@@ -17,15 +17,15 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
- 
+
 
 //connect to the mongo db using moongose module
 mongoose.connect('mongodb://localhost:27017/cubeData', function(err){
     if(err){
       console.log("error " + err);
-    }else{
+  }else{
       console.log("mongoose connected");
-    }
+  }
 })
 
 
@@ -37,7 +37,7 @@ app.post('/signUp', jsonParser,function(req,res){
     user.school = req.body.school;
     user.personalPhone = req.body.personalPhone;
     user.parentPhone = req.body.parentPhone;
- 
+    
 
     user.save(function(err){
         if(err){

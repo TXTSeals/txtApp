@@ -1,19 +1,19 @@
 angular.module('service',[])
 
 .factory('AuthInter', function($window){
-  var AuthInter= {};
+	var AuthInter= {};
 
-  AuthInter.request = function(config){
-    var token = $window.localStorage.getItem('token');
+	AuthInter.request = function(config){
+		var token = $window.localStorage.getItem('token');
 
-    if(token){
-      config.headers['x-access-token'] = token;
+		if(token){
+			config.headers['x-access-token'] = token;
 
-    }
+		}
 
 
-    return config;
-  };
+		return config;
+	};
 
-  return AuthInter;
+	return AuthInter;
 })

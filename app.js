@@ -16,13 +16,13 @@ var app = angular.module('starter', ['ionic','ui.router','service'])
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-    }
-    if (window.StatusBar) {
+  }
+  if (window.StatusBar) {
       // Set the statusbar to use the default style, tweak this to
       // remove the status bar on iOS or change it to use white instead of dark colors.
       StatusBar.styleDefault();
-    }
-  });
+  }
+});
 });
 
 app.config(function($stateProvider,$urlRouterProvider,$httpProvider){
@@ -52,7 +52,7 @@ app.config(function($stateProvider,$urlRouterProvider,$httpProvider){
 
                 controller: function($scope,$http,$timeout,$state){
                     $scope.register = function(){
-                            $scope.serverMsg =false;
+                        $scope.serverMsg =false;
 
                         $http.post('/signUp', $scope.newUser).then(function(data){
                             $scope.serverMsg = data.data;
@@ -88,24 +88,23 @@ app.config(function($stateProvider,$urlRouterProvider,$httpProvider){
             'main':{
                 templateUrl: 'templates/checkIn.html',
                 // resolve: {
-                    
+
                 // },
                 controller: function($scope,$http,checkToken,$state,$window,$timeout){
 
-                        $scope.user = checkToken.data;
-                        $scope.loggingOut = false;
-                        $scope.logout = function(){
-                            $window.localStorage.removeItem('token');
-                            $scope.loggingOut = true;
-                            $timeout(function () {
-                                $state.go('signUp');
-                            }, 3000);
+                    // laptop:[{laptop1:laptop #1,laptop2:laptop #2,laptop3:laptop #3,
+                    //     laptop4:laptop #4,laptop5:laptop #5,laptop6:laptop #6,
+                    //     laptop7:laptop #7,laptop8:laptop #8,laptop9:laptop #9,
+                    //     laptop10:laptop #10,laptop11:laptop #11,laptop12:laptop #12,
+                    //     laptop13:laptop #13,laptop14:laptop #14,laptop15:laptop #15,
+                    //     laptop16:laptop #16,laptop17:laptop #17,laptop18:laptop #18,
+                    //     laptop19:laptop #19,laptop20:laptop #20,laptop21:laptop #21,
+                    //     laptop22:laptop #22,laptop23:laptop #23,laptop24:laptop #24}]
 
-                        }
                     }
                 }
             }
-    })
+        })
 });
 
 
@@ -171,12 +170,12 @@ app.filter('tel', function () {
             case 1:
             case 2:
             case 3:
-                city = value;
-                break;
+            city = value;
+            break;
 
             default:
-                city = value.slice(0, 3);
-                number = value.slice(3);
+            city = value.slice(0, 3);
+            number = value.slice(3);
         }
 
         if(number){
@@ -215,3 +214,14 @@ app.filter('tel', function () {
  //            }
  //        }
  //    })
+
+
+  // $scope.loggingOut = false;
+                        // $scope.logout = function(){
+                        //     $window.localStorage.removeItem('token');
+                        //     $scope.loggingOut = true;
+                        //     $timeout(function () {
+                        //         $state.go('signUp');
+                        //     }, 3000);
+
+                        // }

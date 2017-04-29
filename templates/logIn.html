@@ -1,13 +1,13 @@
-<div class="bar bar-header bar-positive">
-  <a href="index.html" class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+<ion-header-bar class="bar bar-header bar-positive">
+  <a href="index.html" class="button icon-left ion-chevron-left button-clear button-light" style="color: white;"></a>
   <h1 class="title">Look For Your Name</h1>
-</div>
+</ion-header-bar>
 
 <div id="userContainer" ng-repeat="user in users">
   <div class="newUser">
-    <a class="item item-thumbnail-left" href="#">
+    <a class="userLogin item item-thumbnail-left" href="#">
       <img src="http://www.designboom.com/wp-content/uploads/2016/07/patricia-piccinini-graham-transport-accident-commission-designboom-1800.jpg">
-      <h2>{{user.name}}</h2>
+      <h2 class="userName">{{user.name}}</h2>
     </a>
   </div>
 </div>

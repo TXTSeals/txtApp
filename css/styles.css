@@ -23,8 +23,13 @@ body{
   text-align: center;
   display: block;
 }
+.button.button-positive{
+  padding-left: 35px;
+  padding-right: 35px;
+}
 .button.button-positive.button-outline{
-  width: 75%;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-bottom: 30px;
   height: 75px;
   font-size: 30px;
@@ -63,9 +68,23 @@ img{
   margin-bottom: -40px;
 }
 .userName{
-  padding-top: 35px;
   padding-left: 3%;
 }
 .bar{
   position: fixed;
+}
+h4{
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+h2{
+  padding-bottom: 10px;
+}
+.list{
+  margin-top: -45px;
+}
+h1{
+  text-align: center;
 }

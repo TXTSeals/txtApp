@@ -1,11 +1,11 @@
    <ion-pane>
-    <ion-header-bar class="bar bar-header bar-positive">
+    <ion-header-bar class="bar bar-header bar-positive animated fadeInRight">
       <a href="index.html" class="button icon-left ion-chevron-left button-clear button-light" style="color: white;"></a>
       <h1 class="title">Sign Up</h1>
     </ion-header-bar>
     <ion-content class="has-header">
     </ion-content>
-    <div ng-submit="register()" name="loginForm">
+    <div ng-submit="register()" name="loginForm" class="animated fadeInLeft">
       <div class="list">
         <label class="item item-input" style="margin-top: 40px;">
           <span class="input-label">Full Name</span>
@@ -35,6 +35,6 @@
       </center>
     </div>
     <div class="reponse" ng-show="serverMsg">
-      <h3>{{serverMsg.message}}</h3>
+      <h4><u>{{serverMsg.message}}</u></h4>
     </div>
   </ion-pane>
